@@ -1,5 +1,6 @@
-"""Maori games Yes/No
-based on 01_yes_no_v3
+"""Creating function code of instruction and adding on to yes_no
+Gets the result of yes or no from yes_no function
+Displays instruction when you input no into yes no function
 """
 
 
@@ -28,8 +29,22 @@ def yes_no(question_text):
             print("Please answer 'yes' or 'no'")
 
 
+# function to display instruction
+def instructions():
+    print("**** How to play ****")
+    print()
+    print("The rule of the game will go here")
+    print()
+    print("Program continues")
+    print()
+
 #  Main routine goes here...
+
+
 show_instruction = yes_no("Have you played this game before?")
 print(f"You entered '{show_instruction}'")
 print()
-
+if show_instruction == "No":
+    instructions()
+else:
+    print("program continues")
