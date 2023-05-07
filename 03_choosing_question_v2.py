@@ -1,6 +1,6 @@
-"""Maori games Yes/No
-Simplifies the input by converting it to lower case. Also, accepts y or n as
-abbreviation. Prints result of user choice as well as input - for testing
+"""Maori games Choosing questions
+Simplifies the input by converting it to lower case. Also, accepts O or T as
+abbreviation. Based on yes_no program
 """
 
 # Ask the user what quiz they would like to play
