@@ -1,10 +1,12 @@
+"""Copy and pasted 04 function as this will have the 2nd load of questions.
+
 """
-Made the previous version into a function.
-"""
-import random
+
+# Changed the name of this function as its going to be a seperate function.
 
 
-def generate_question_1():
+def generate_question_2():
+    import random
     number_of_quiz = 0
     point = 0
     # shows what question you are on
@@ -13,21 +15,21 @@ def generate_question_1():
     # This uses two ordinary (1-dimensional) lists
 
     # 1nd list
-    maori_numbers = [["tahi", "1"], ["rua", "2"], ["toru", "3"], ["wha", "4"], ["rima", "5"],
-                     ["ono", "6"], ["whitu", "7"], ["waru", "8"], ["iwa", "9"], ["tekau", "10"]]
+    maori_days = [["Rahina", "MONDAY"], ["Ratu", "TUESDAY"], ["Raapa", "WEDNESDAY"], ["Rapare", "THURSDAY"],
+                     ["Ramere", "FRIDAY"], ["Rahoroi", "SATURDAY"], ["Ratapu", "SUNDAY"]]
 
     # runs for 10 questions and stops
-    while number_of_quiz <= 9:
+    while number_of_quiz <= 6:
         # Generates random question
-        quiz_1 = random.choice(maori_numbers)
+        quiz_1 = random.choice(maori_days)
 
         # Asks for question
-        question_1 = input(f"#{rounds} What number is {quiz_1[0]}?: ")
+        question_1 = input(f"#{rounds} What day is {quiz_1[0]}?: ").upper()
         # adds a round to the number of quiz
         number_of_quiz += 1
         rounds += 1
         # When a question has been displayed, remove that question so that questions would not overlap
-        maori_numbers.remove(quiz_1)
+        maori_days.remove(quiz_1)
 
         # There is a list inside the list and the answer is in the 2nd position
         answer = quiz_1[1]
@@ -44,10 +46,9 @@ def generate_question_1():
 
 
 # Main routine
-generate_question_1()
-# end user testing y/n
+generate_question_2()
 play_again = input("Do you want to play again?")
 if play_again == "yes":
-    generate_question_1()
+    generate_question_2()
 else:
     print("Goodbye")
