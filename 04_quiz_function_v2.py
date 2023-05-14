@@ -1,5 +1,5 @@
 """
-Made the previous version into a function.
+Removed while loop from v1 and removed .choice and .remove by replacing it with .shuffle
 """
 import random
 
