@@ -1,8 +1,11 @@
-""" 00 Base component of maori quiz
-Edited from the feedback I received from end user
+""" Final version of the program
+All the feedbacks from the end user has been included (Format, Adding round numbers)
+
 """
 import random
 
+
+# Yes no checker. It asks for an answer of either yes or no. When something else it entered, it outputs an error
 
 def yes_no(question_text: object) -> object:
     while True:
@@ -24,6 +27,8 @@ def yes_no(question_text: object) -> object:
         else:
             print("Please answer 'yes' or 'no': ")
 
+# Function that generates instructions on how to play this game
+
 
 def instructions():
     print("**** How to play ****")
@@ -34,6 +39,8 @@ def instructions():
           "You will gain 1 point from getting question correct and lose 1 when you get something wrong\n"
           "Now good luck and have fun!")
     print()
+
+# A Menu function where it asks the user what game they would like to play.
 
 
 def question(question_text):
@@ -58,6 +65,9 @@ def question(question_text):
         # Otherwise - show error
         else:
             print("Please answer 'o' or 't' or press 'x' to exit program: ")
+
+# Generates Maori numbers from 1 to 10 randomly with no repetitive question. Runs until all the words has run out from
+# the list
 
 
 def generate_question_1():
@@ -85,6 +95,8 @@ def generate_question_1():
             point -= 1
 
     print(f"Your score was {point} points")
+
+# 2nd quiz function where it generates Days of the week in Maori. It also runs until all the words has run out/
 
 
 def generate_question_2():
@@ -114,6 +126,8 @@ def generate_question_2():
 
     print(f"Your score was {point} points")
 
+# It formats text to make it more interesting instead of being empty and mid
+
 
 def formatter(symbol, text):
     sides = symbol * 3
@@ -126,26 +140,33 @@ def formatter(symbol, text):
 print(formatter("-", "Welcome to Maori Quiz!"))
 print()
 played_before = yes_no("Have you play this game before? Please enter 'yes or 'no': ")
+# Displays instruction when answer equals no
 if played_before == "No":
     instructions()
     start = yes_no("Are you ready to start? (type 'yes' to continue 'no' to exit): ")
 
+# When answer equals yes, it directs into the menu function called question
 else:
     start = "Yes"
 
+# The user can choose what to play by typing "o" or "t" or they can press x to exit
 while start == "Yes":
     question_no = question("What question would you like to play?"
                            "\nPress 'o' for question set 1"
                            "\nPress 't' for question set 2"
                            "\nOr 'x' to exit: ")
     play_again = "yes"
+    # When the user enters "o" it generates question set 1
     if question_no == "one":
         generate_question_1()
 
+    # When the user enters "t" it generates question set 2
     elif question_no == "two":
         generate_question_2()
 
+    # Exits program when "x" is entered
     elif question_no == "x":
         start = "No"
+# Exits program
 if start == "No":
     print(formatter("#", "Thank you for using our program"))
